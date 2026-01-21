@@ -8,7 +8,10 @@ export const Layout = () => {
     return (
         <ScrollToTop>
             <Navbar />
+            <div className="flex-grow-1">
                 <Outlet />
+
+            </div>
             <Footer />
         </ScrollToTop>
     )

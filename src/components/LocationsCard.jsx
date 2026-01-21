@@ -30,7 +30,8 @@ export const LocationsCard = ({location}) => {
 
 
                     <button className="btn btn-primary btn-sm w-50">
-                        Agregar
+                
+                        <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
             </div>

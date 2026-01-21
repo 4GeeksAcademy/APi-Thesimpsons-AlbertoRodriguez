@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom"
+
+
 export const CharactersCard = ({ character }) => {
 
     return (
@@ -24,13 +27,16 @@ export const CharactersCard = ({ character }) => {
             <div className="card-footer bg-white border-0 mt-auto pt-0">
                 <div className="d-flex gap-2">
 
-                    <button className="btn btn-outline-primary btn-sm ">
-                        Ver mas
-                    </button>
+                    <Link to={`/character/${character.id}`}>
+                        <button className="btn btn-outline-primary btn-sm ">
+                            Ver mas
+                        </button>
+                    </Link>
 
 
                     <button className="btn btn-primary btn-sm w-50">
-                        Agregar
+
+                        <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
             </div>

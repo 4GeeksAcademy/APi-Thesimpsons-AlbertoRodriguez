@@ -17,15 +17,19 @@ export const Home = () => {
 
 	return (
 		<div className="container py-4">
-			<div>
+			<div style={{ backgroundColor: "#000", display: "inline-block" }}>
 				<h1
-					className="text-center fw-bold text-warning my-4"
-					style={{ textShadow: "2px 2px 0 #000" }}
+					className="fw-bold ps-3 pe-3 py-1"
+					style={{
+						color: "#FFD90F",
+						textShadow: "2px 2px 0 #000",
+						margin: 0
+					}}
 				>
-					Los Simpsons
+
+					Characters
 				</h1>
 			</div>
-
 			<div className="d-flex flex-nowrap overflow-auto gap-3">
 				{store.characters.map(character => (
 					<div className=" col-sm-6 col-md-4 col-lg-3" key={character.id}>
@@ -34,6 +38,22 @@ export const Home = () => {
 				))}
 
 			</div>
+
+
+			<div style={{ backgroundColor: "#000", display: "inline-block" }}>
+				<h1
+					className="fw-bold ps-3 pe-3 py-1"
+					style={{
+						color: "#FFD90F",
+						textShadow: "2px 2px 0 #000",
+						margin: 0
+					}}
+				>
+					Locations
+				</h1>
+			</div>
+
+
 
 
 			<div className="d-flex flex-nowrap overflow-auto gap-3">

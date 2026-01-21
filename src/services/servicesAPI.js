@@ -15,6 +15,23 @@ export const getCharacters = async (dispatch) => {
 }
 
 
+
+
+export const getCharacter = async (id) => {
+    const response = await fetch(`${BASE_URL}/characters/${id}`)
+    if(!response.ok){
+        console.log("hubo un error");
+        return
+    }
+    const data = await response.json();
+    return data
+
+
+    
+    
+}
+
+
 const BAS_URL = "https://thesimpsonsapi.com/api"
 export const getLocation = async (dispatch) => {
     const response = await fetch(`${BAS_URL}/locations`)
