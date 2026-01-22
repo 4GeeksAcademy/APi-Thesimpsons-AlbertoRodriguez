@@ -15,7 +15,8 @@ export const initialStore = () => {
 
     ],
     characters: [],
-    locations:[]
+    locations: [],
+    favorito: []
   }
 }
 
@@ -36,11 +37,34 @@ export default function storeReducer(store, action = {}) {
 
       };
     case 'set_locations':
-      return{
+      return {
         ...store,
         locations: action.payload
       }
 
+    case 'add_to_favorito':
+      const character = action.payload
+      const exist = store.favorito.find(item => item.id === character.id)
+
+      if (exist) {
+
+        return store
+      }
+      return {
+        ...store,
+        favorito: [...store.favorito, character]
+      }
+
+      case 'delete_favorito':
+        const characterinfo = action.payload
+        const newfavorito = store.favorito.filter((item) => {
+        return item.id !=  characterinfo.id
+
+        })
+         return {
+        ...store,
+        favorito: newfavorito
+      }
     default:
       throw Error('Unknown action.');
   }

@@ -10,7 +10,7 @@ export const Layout = () => {
             <Navbar />
             <div className="flex-grow-1">
                 <Outlet />
-
+                
             </div>
             <Footer />
         </ScrollToTop>

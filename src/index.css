@@ -6,3 +6,55 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
 }
+
+.simpson-bg {
+  background-color: #FFD90F; /* Amarillo Simpson */
+  border-radius: 8px;        /* Opcional, bordes suaves */
+}
+
+.simpson-card {
+  background-image: url("https://images7.alphacoders.com/775/775120.jpg"); /* tu imagen */
+  background-repeat: no-repeat;          /* para que se repita */
+  background-size: cover;        /* tamaño pequeño */
+  background-position: center;
+  border-radius: 12px;
+}
+
+.simpson-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+}
+
+.simpson-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+.simpson-footer {
+	background: linear-gradient(180deg, #ffd90f, #ffcc00);
+	color: #1b1b1b;
+	font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+	border-top: 5px solid #1b1b1b;
+}
+
+.simpson-footer a {
+	color: #1b1b1b;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.simpson-footer a:hover {
+	color: #d62828;
+}
+
+.simpson-footer .donut {
+	font-size: 1.3rem;
+}
+
+.simpson-footer .heart {
+	color: #d62828;
+}

@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom"
+import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 
 
 export const CharactersCard = ({ character }) => {
+
+     const {store, dispatch} = useGlobalReducer()
+
+     const onAddToFavorito = () => {
+        dispatch({type: "add_to_favorito", payload: character})
+    }
 
     return (
         <div className="card h-100 shadows-sm d-flex flex-column">
@@ -34,7 +41,7 @@ export const CharactersCard = ({ character }) => {
                     </Link>
 
 
-                    <button className="btn btn-primary btn-sm w-50">
+                    <button className="btn btn-primary btn-sm w-50" onClick={onAddToFavorito}>
 
                         <i class="fa-regular fa-heart"></i>
                     </button>
