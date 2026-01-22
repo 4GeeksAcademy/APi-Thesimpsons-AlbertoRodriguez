@@ -5,15 +5,6 @@ import { getCharacter } from "../services/servicesAPI"
 
 
 
-
-
-
-
-
-
-
-
-
 export const CharactersDetail = () => {
 
     const {id} = useParams()

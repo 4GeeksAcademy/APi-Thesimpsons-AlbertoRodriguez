@@ -28,7 +28,7 @@ export const CharactersCard = ({ character }) => {
                 </p>
 
                 <span className="badge bg-primary">
-                    {character.age} años
+                    {character.age} 
                 </span>
             </div>
             <div className="card-footer bg-white border-0 mt-auto pt-0">

@@ -1,4 +1,11 @@
+import { Link } from "react-router-dom"
+
+
+
+
 export const LocationsCard = ({location}) => {
+
+    
 
     return (
         <div className="card h-100 shadows-sm d-flex flex-column">
@@ -23,10 +30,11 @@ export const LocationsCard = ({location}) => {
             </div>
             <div className="card-footer bg-white border-0 mt-auto pt-0">
                 <div className="d-flex gap-2">
-
+                    <Link to={`/location/${location.id}`}>
                     <button className="btn btn-outline-primary btn-sm ">
                         Ver mas
                     </button>
+                    </Link>
 
 
                     <button className="btn btn-primary btn-sm w-50">
