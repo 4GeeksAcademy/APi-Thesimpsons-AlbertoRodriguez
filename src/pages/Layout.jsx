@@ -7,12 +7,17 @@ import { Footer } from "../components/Footer"
 export const Layout = () => {
     return (
         <ScrollToTop>
-            <Navbar />
-            <div className="flex-grow-1">
-                <Outlet />
-                
+            <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: '100vh'  // altura total de la ventana
+            }}>
+                <Navbar />
+                <main style={{ flex: 1 }}>
+                    <Outlet />
+                </main>
+                <Footer />
             </div>
-            <Footer />
         </ScrollToTop>
     )
 }

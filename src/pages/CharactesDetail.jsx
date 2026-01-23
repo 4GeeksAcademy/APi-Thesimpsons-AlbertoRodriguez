@@ -31,15 +31,15 @@ export const CharactersDetail = () => {
 
 
     return (
-        <div className="container py-4 simpson-bg">
+        <div className="container py-4 simpson-bg mt-4 mb-4">
             <Link to={"/"}>
             <button className=" btn btn-outline-secondary btn-link p-0 mb-3">
-                Volver
+                <i class="fa-solid fa-arrow-left"></i>  Volver
             </button>
             </Link>
 
-            <div className="card shadow-sm simpson-card">
-                <div className="col-md-4 p-3 d-flex justify-content-center align-items-center">
+            <div className="card shadow-sm simpson-card" >
+                <div className="col-md-4 p-3 d-flex justify-content-center align-items-center" >
                     <img
                         src={`https://cdn.thesimpsonsapi.com/500${character.portrait_path}`}
                         alt={character.name}
