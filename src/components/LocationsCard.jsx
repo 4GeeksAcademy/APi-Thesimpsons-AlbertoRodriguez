@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom"
+import useGlobalReducer from "../hooks/useGlobalReducer"
 
 
 
 
-export const LocationsCard = ({location}) => {
 
-    
+
+export const LocationsCard = ({ location }) => {
+
+    const {store, dispatch} = useGlobalReducer()
+
+    const onAddToFavorito = () => {
+        dispatch({ type: "add_to_favorit", payload: location })
+    }
 
     return (
         <div className="card h-100 shadows-sm d-flex flex-column">
@@ -25,20 +32,19 @@ export const LocationsCard = ({location}) => {
                 </p>
 
                 <span className="badge bg-primary">
-                    {location.use} 
+                    {location.use}
                 </span>
             </div>
             <div className="card-footer bg-white border-0 mt-auto pt-0">
                 <div className="d-flex gap-2">
                     <Link to={`/location/${location.id}`}>
-                    <button className="btn btn-outline-primary btn-sm ">
-                        Ver mas
-                    </button>
+                        <button className="btn btn-outline-primary btn-sm ">
+                            Ver mas
+                        </button>
                     </Link>
 
+                    <button className="btn btn-primary btn-sm w-50" onClick={onAddToFavorito}>
 
-                    <button className="btn btn-primary btn-sm w-50">
-                
                         <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>

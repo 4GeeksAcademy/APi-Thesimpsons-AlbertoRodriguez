@@ -3,13 +3,17 @@ import useGlobalReducer from "../hooks/useGlobalReducer"
 import { useEffect, useState } from "react"
 import { getLocationById } from "../services/servicesAPI"
 
-getLocationById
+
 
 export const LocationsDetail = () => {
 
     const { id } = useParams()
 
+
+
     const [location, setLocation] = useState({})
+
+     const {store, dispatch} = useGlobalReducer()
 
 
 
@@ -28,6 +32,9 @@ export const LocationsDetail = () => {
 
     }, [])
 
+    const onAddToFavorito = () => {
+        dispatch({ type: "add_to_favorit", payload: location })
+    }
 
 
 
@@ -36,7 +43,7 @@ export const LocationsDetail = () => {
         <div className="container py-4 simpson-bg mt-4">
             <Link to={"/"}>
                 <button className=" btn btn-outline-secondary btn-link p-0 mb-3">
-                  <i class="fa-solid fa-arrow-left"></i>  Volver
+                    <i class="fa-solid fa-arrow-left"></i>  Volver
                 </button>
             </Link>
 
@@ -57,7 +64,9 @@ export const LocationsDetail = () => {
                                 <p>{location.town}</p>
                                 <p>{location.use}</p>
                                 <div className="d-flex gap-2 mt-3">
-                                    <button className="btn btn-primary">Agregar a favoritos</button>
+                                    <button className="btn btn-primary" onClick={onAddToFavorito}>
+                                        Agregar a favoritos
+                                        </button>
                                 </div>
                             </div>
                         </div>
